@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-import { Button, Image } from 'react-bootstrap';
+import { button, Image } from 'react-bootstrap';
 import { editProfile } from '../actions/index';
 
 
@@ -49,28 +49,25 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container mw-40 mh=60">
-        <div className="row mw-100 mh-50 bg-primary border-0" >
-          <Image className="text-hide" src="" circle />
+      <div className="pcontainer">
+        <div className="ptop" >
+          <Image className="imaP" src="https://static.pexels.com/photos/189349/pexels-photo-189349.jpeg" circle />
+          <p className="np1">{this.props.user.name}</p>
         </div>
-        <div className="col mw-100 mh-50 bg-faded border-0">
-          <div className="container">
-            <strong>Emergency Contact: </strong>
-            <input className="credentials-input" id="emergencyContactP" type="text" name="emergencyContact" onChange={this.onChangeEC} value={this.state.emergencyContact} />
+        <div className="pbot">
+          <div className="b-container">
+            <input className="pIn" id="emergencyContactP" type="text" name="emergencyContact" onChange={this.onChangeEC} value={this.state.emergencyContact} />
           </div>
-          <div className="container">
-            <strong>Address: </strong>
-            <input className="credentials-input" id="addressP" type="text" name="address" value={this.state.address} onChange={this.onChangeAddress} />
+          <div className="b-container">
+            <input className="pIn" id="addressP" type="text" name="address" value={this.state.address} onChange={this.onChangeAddress} />
           </div>
-          <div className="container">
-            <strong>Email: </strong>
-            <input className="credentials-input" id="emailP" type="text" name="email" value={this.state.email} onChange={this.onChangeEmail} />
+          <div className="b-container">
+            <input className="pIn" id="emailP" type="text" name="email" value={this.state.email} onChange={this.onChangeEmail} />
           </div>
-          <div className="container">
-            <strong>Phone: </strong>
-            <input className="credentials-input" id="phoneNumberP" type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.onChangePhone} />
+          <div className="b-container">
+            <input className="pIn" id="phoneNumberP" type="text" name="phoneNumber" value={this.state.phoneNumber} onChange={this.onChangePhone} />
           </div>
-          <Button bsStyle="success" onClick={() => {
+          <button className="btnP" onClick={() => {
             let data = {
               name: this.props.user.name,
               emergencyContact: this.state.emergencyContact,
@@ -80,7 +77,7 @@ class Profile extends Component {
             };
 
             this.props.editProfile(data);
-          }}>Edit Profile.</Button>
+          }}>Edit</button>
         </div>
       </div>
     );

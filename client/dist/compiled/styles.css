@@ -24,6 +24,68 @@ a {
   text-decoration: none;
 }
 
+.pcontainer {
+  width: 350px;
+  height: 600px;
+  background: #b8ead3;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.ptop {
+  width: 100%;
+  height: 50%;
+}
+
+.pbot {
+  width: 100%;
+  height: 50%;
+  background: white;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.np1 {
+  text-align: center;
+}
+
+.imaP {
+  display: block;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  margin-left: auto;
+  margin-top: 50px;
+  margin-right: auto;
+}
+
+.btnP {
+  display:block;
+  background-color: #b8ead3;
+  color: white;
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  border: 1px;
+  margin: auto;
+  font-size: 18pt;
+}
+
+.pIn {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 14pt;
+  opacity: 0.5;
+  font-family: Monospace;
+}
+
+.b-container {
+  width: 100%;
+  height: 15%;
+  border: 0 px;
+}
 
 .app-container {
   width: 100%;

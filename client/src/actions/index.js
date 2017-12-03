@@ -163,6 +163,7 @@ const goHome = (newView) => {
 
 const checkedIfLoggedIn = () => {
   const response = axios.get('/welcome_back');
+
   return {
     type: 'GET_ALL',
     payload: response,
@@ -178,10 +179,12 @@ const selectWeek = (monDate) => {
 
 const editProfile = (data) => {
   const response = axios.put('/update_profile', { data });
+  
   return {
     type: 'RENDER_EDIT',
+    payload: response,
   };
-}
+};
 
 module.exports = {
   goHome,

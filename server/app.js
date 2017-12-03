@@ -75,8 +75,8 @@ app.post('/logout', utils.destroySession, (req, res) => {
 });
 
 app.put('/update_profile', utils.updateProfile, (req, res) => {
-  console.log('its in put');
-  res.status(200).end();
+  obj = {user: req.user};
+  res.json(obj);
 });
 
 app.get('/welcome_back',

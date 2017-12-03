@@ -27,13 +27,22 @@ const getUser = (req, res, next) => {
 };
 
 const updateProfile = (req, res, next) => {
-  console.log(req.body.data);
   db.User.update(req.body.data, {
     where: {
       name: req.body.data.name,
     },
-  }).then((user) => {
-    next();
+  }).then(() => {
+    db.User.findAll({
+      where: {
+        name: req.session.user,
+      },
+    }).then((user) => {
+      console.log('......', user[0].dataValues);
+      req.user = user[0].dataValues;
+      next();
+    }).catch((err) => {
+      res.status(500).send('Erro getting user');
+    });
   }).catch((err) => {
     res.status(500).send('Error updating user');
   })
